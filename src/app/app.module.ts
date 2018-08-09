@@ -10,6 +10,7 @@ import { HistoryComponent } from './pages/history/history.component';
 import { PlatillosBoardComponent } from './components/platillos/platillos-board/platillos-board.component';
 import { PlatilloComponent } from './components/platillos/platillo/platillo.component';
 import { CarritoComponent } from './components/platillos/carrito/carrito.component';
+import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -21,14 +22,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HistoryComponent,
     PlatillosBoardComponent,
     PlatilloComponent,
-    CarritoComponent
+    CarritoComponent,
+    NavbarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule.forRoot()
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
