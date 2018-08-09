@@ -11,6 +11,13 @@ import { PlatillosBoardComponent } from './components/platillos/platillos-board/
 import { PlatilloComponent } from './components/platillos/platillo/platillo.component';
 import { CarritoComponent } from './components/platillos/carrito/carrito.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { NavbarComponent } from './components/navbar/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -21,12 +28,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HistoryComponent,
     PlatillosBoardComponent,
     PlatilloComponent,
-    CarritoComponent
+    CarritoComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
