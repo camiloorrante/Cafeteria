@@ -4,7 +4,7 @@ import { Observable, of } from 'rxjs';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Router, CanActivate } from '@angular/router';
 import { UsuariosService } from '../usuarios/usuarios.service';
-import { map, catchError } from '../../../../node_modules/rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
