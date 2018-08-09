@@ -30,9 +30,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     PlatilloComponent,
     CarritoComponent,
     NavbarComponent,
-    CarritoElementoComponent
+    CarritoElementoComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule.forRoot()],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule],
   providers: [],
   bootstrap: [AppComponent]
 })
