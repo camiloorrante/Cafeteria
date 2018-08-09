@@ -9,10 +9,16 @@ import { ChefboardComponent } from './pages/chefboard/chefboard.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { PlatillosBoardComponent } from './components/platillos/platillos-board/platillos-board.component';
 import { PlatilloComponent } from './components/platillos/platillo/platillo.component';
-import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { CarritoComponent } from './components/platillos/carrito/carrito.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarritoElementoComponent } from './components/platillos/carrito-elemento/carrito-elemento.component';
+// firebase
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +36,10 @@ import { CarritoElementoComponent } from './components/platillos/carrito-element
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
