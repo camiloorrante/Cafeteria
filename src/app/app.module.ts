@@ -9,6 +9,7 @@ import { ChefboardComponent } from './pages/chefboard/chefboard.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { PlatillosBoardComponent } from './components/platillos/platillos-board/platillos-board.component';
 import { PlatilloComponent } from './components/platillos/platillo/platillo.component';
+import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { CarritoComponent } from './components/platillos/carrito/carrito.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 // firebase
