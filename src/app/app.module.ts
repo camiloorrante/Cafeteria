@@ -18,7 +18,6 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,15 +30,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CarritoComponent,
     NavbarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbModule.forRoot(),
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, NgbModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
