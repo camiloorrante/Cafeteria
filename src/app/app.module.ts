@@ -12,6 +12,7 @@ import { PlatilloComponent } from './components/platillos/platillo/platillo.comp
 import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { CarritoComponent } from './components/platillos/carrito/carrito.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CarritoElementoComponent } from './components/platillos/carrito-elemento/carrito-elemento.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     PlatillosBoardComponent,
     PlatilloComponent,
     CarritoComponent,
-    NavbarComponent
+    NavbarComponent,
+    CarritoElementoComponent
   ],
   imports: [
     BrowserModule,
