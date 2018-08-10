@@ -22,6 +22,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule } from '../../node_modules/@angular/forms';
 import { PedidosComponent } from './components/history/pedidos/pedidos.component';
 import { PlatilloAgregarComponent } from './components/platillos/platillo-agregar/platillo-agregar.component';
+import { PedidoschefComponent } from './pages/pedidoschef/pedidoschef.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PlatilloAgregarComponent } from './components/platillos/platillo-agrega
     NavbarComponent,
     CarritoElementoComponent,
     PedidosComponent,
-    PlatilloAgregarComponent
+    PlatilloAgregarComponent,
+    PedidoschefComponent
   ],
   imports: [
     BrowserModule,

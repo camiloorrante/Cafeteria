@@ -1,14 +1,24 @@
 <div class="container border rounded py-3 bg-light">
-  <p *ngIf="misPedidos.status=='Pendiente'; else servido">
-    <strong>Estatus: </strong>{{misPedidos.status}}
-  </p>
-  <ng-template #servido>
-    <p class="text-success">
-      <strong class="text-dark">Estatus: </strong>
-      {{misPedidos.status}}
-    </p>
-  </ng-template>
-  <ul class="list-group" >
+  <div class="row">
+    <div class="col">
+
+      <p *ngIf="misPedidos.status=='Pendiente'; else servido">
+        <strong>Estatus: </strong>{{misPedidos.status}}
+      </p>
+      <ng-template #servido>
+        <p class="text-success">
+          <strong class="text-dark">Estatus: </strong>
+          {{misPedidos.status}}
+        </p>
+      </ng-template>
+    </div>
+    <div class="col">
+      <p *ngIf="uid" class="text-right">
+        <strong>Cliente:</strong> {{uid}}</p>
+    </div>
+  </div>
+
+  <ul class="list-group">
     <!-- Agregar en los <li> el ngFor para replicar platillos (arreglo del objeto pedidos: Revisar modelo pedidos) -->
     <li class="list-group-item" *ngFor="let platillo of misPedidos.platillos">
       <div class="row">
@@ -22,4 +32,7 @@
         </div>
       </div>
   </ul>
+  <div class="container-fuid pt-2" *ngIf="misPedidos.status=='Pendiente'">
+    <button class="btn btn-danger btn-block">Servir</button>
+  </div>
 </div>

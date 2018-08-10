@@ -6,11 +6,14 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./pedidos.component.css']
 })
 export class PedidosComponent implements OnInit {
-  @Input('misPedidos') misPedidos: any;
-  constructor() { }
+  @Input('misPedidos')
+  misPedidos: any;
+
+  @Input('uid')
+  uid: string;
+  constructor() {}
 
   ngOnInit() {
-     console.log(this.misPedidos);
+    console.log(this.misPedidos);
   }
-
 }
