@@ -8,11 +8,11 @@
     <div class="col-8">
       <div class="row">
         <div class="col-4 col-md-1">
-          <img src="https://goodfood.hr/wp-content/uploads/2017/04/logoweb.png" alt="foto de perfil" style="max-width: 50px; border-radius: 50%;">
+          <img routerLink="/" class="aci" src="https://goodfood.hr/wp-content/uploads/2017/04/logoweb.png" alt="foto de perfil" style="max-width: 50px; border-radius: 50%;">
         </div>
         <div class="col-3 d-none d-md-block d-lg-block d-xl-block">
-          <a class="navbar-brand" href="#">
-            <p class="text-white" *ngIf="!usuario.displayName; else nameFb">Bienvenido {{usuario?.email}}</p>
+          <a class="navbar-brand">
+            <p class="text-white" *ngIf="!usuario.displayName; else nameFb">{{usuario?.email}}</p>
             <ng-template #nameFb>
               <p class="text-white">Bienvenido {{usuario?.displayName}}</p>
             </ng-template>
@@ -26,12 +26,14 @@
       </div>
     </div>
 
-    <div class="col-2 col-sm-1">
-      <a href="#" class="btn btn-outline-light btn-sm active text-danger" role="button" aria-pressed="true">Mis pedidos</a>
-    </div>
-
-    <div class="col-2 col-sm-1">
-      <a href="#" class="btn btn-outline-light btn-sm active text-danger" role="button" aria-pressed="true">Mis pedidos</a>
+    <!-- <div class="col-2 col-sm-1">
+      <a routerLink="/historial" class="btn btn-outline-light btn-sm active text-danger" role="button" aria-pressed="true">Mis pedidos</a>
+    </div> -->
+    <div class="btn-group">
+      <button routerLink="/dashboard" class="btn btn-light btn-sm text-danger">Dasboard</button>
+      <button routerLink="/historial" class="btn btn-light btn-sm text-danger">Mis pedidos</button>
+      <button routerLink="/pedidos" class="btn btn-light btn-sm text-danger">Lista de Pedidos</button>
+      <button routerLink="/chefboard" class="btn btn-light btn-sm text-danger">Menú de Patillos</button>
     </div>
   </div>
 </nav>
