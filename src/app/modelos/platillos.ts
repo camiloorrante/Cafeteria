@@ -1,4 +1,4 @@
-export class Platillos {
+export class Platillo {
     nombre: string;
     descripcion: string;
     foto: string;

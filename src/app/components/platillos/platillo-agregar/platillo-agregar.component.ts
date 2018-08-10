@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlatillosService } from '../../../services/platillos/platillos.service';
+import { Platillo } from '../../../modelos/platillos';
 
 @Component({
   selector: 'neo-platillo-agregar',
@@ -7,6 +8,7 @@ import { PlatillosService } from '../../../services/platillos/platillos.service'
   styleUrls: ['./platillo-agregar.component.css']
 })
 export class PlatilloAgregarComponent implements OnInit {
+  public platillo: Platillo = new Platillo();
 
   constructor(private _platilloService: PlatillosService) { }
 
@@ -14,7 +16,9 @@ export class PlatilloAgregarComponent implements OnInit {
   }
 
   agregarPlatillo() {
-    console.log('Clik agregado');
+    this._platilloService.postPlatillos(this.platillo).then( () => {
+      this.platillo = new Platillo();
+    });
   }
 
 }

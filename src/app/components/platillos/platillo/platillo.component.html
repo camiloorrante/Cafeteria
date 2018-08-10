@@ -4,8 +4,9 @@
   <div class="card-body">
     <h5 class="card-title">{{platillo.nombre}}</h5>
     <p class="card-text">{{platillo.descripcion}}</p>
-    <div *ngIf="mostrar; else car" placement="top" ngbTooltip="Quitar del menú">
-      <button class="btn btn-danger btn-block" placement="top" ngbTooltip="Agregar al Carrito">
+
+    <div *ngIf="usuario.email === 'dev@gmail.com'; else car" placement="top" ngbTooltip="Quitar del menú">
+      <button class="btn btn-danger btn-block" (click)="removePlatillo()" placement="top" ngbTooltip="Agregar al Carrito">
         <i class="fa fa-trash"></i>
       </button>
     </div>
