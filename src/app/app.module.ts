@@ -19,6 +19,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '../../node_modules/@angular/forms';
+import { PedidosComponent } from './components/history/pedidos/pedidos.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { FormsModule } from '../../node_modules/@angular/forms';
     CarritoComponent,
     NavbarComponent,
     CarritoElementoComponent,
+    PedidosComponent,
   ],
   imports: [
     BrowserModule,
