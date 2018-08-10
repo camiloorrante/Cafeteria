@@ -19,7 +19,6 @@ const routes: Routes = [
   },
   { path: 'historial', component: HistoryComponent },
   { path: 'pedidos', component: PedidoschefComponent },
-  { path: 'historial', component: HistoryComponent },
   { path: 'chefboard', component: ChefboardComponent }
 ];
 
