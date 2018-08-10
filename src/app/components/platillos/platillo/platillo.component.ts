@@ -7,6 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PlatilloComponent implements OnInit {
   @Input() platillo;
+  public mostrar: Boolean = false; // Rol chef/usuario
   constructor() { }
 
   ngOnInit() {

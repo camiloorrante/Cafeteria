@@ -1,0 +1,28 @@
+<div class="container-fluid border">
+
+  <header class="border-bottom mb-2 text-center">
+    <h3>Nuevo Platillo
+      <i class="fa fa-plus-circle"></i>
+    </h3>
+  </header>
+
+  <form class="my-3">
+
+    <div class="form-group">
+      <label for="">Nombre:</label>
+      <input type="text" class="form-control" placeholder="Nombre del Platillo" />
+    </div>
+    <div class="form-group">
+      <label for="">Descripción: </label>
+      <input type="text" class="form-control" placeholder="Descripción del Platillo" />
+    </div>
+    <div class="form-group">
+      <label for="">Imagen: </label>
+      <input type="text" class="form-control" placeholder="Imagen del Platillo" />
+    </div>
+
+    <button class="btn btn-danger btn-block" type="button" placement="top" ngbTooltip="Agregar nuevo Platillo al menú"
+      (click)="agregarPlatillo()">Agregar</button>
+
+  </form>
+</div>

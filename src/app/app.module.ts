@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
+import { AccesoComponent } from './pages/acceso/acceso.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ChefboardComponent } from './pages/chefboard/chefboard.component';
 import { HistoryComponent } from './pages/history/history.component';
@@ -19,11 +19,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormsModule } from '../../node_modules/@angular/forms';
+import { PedidosComponent } from './components/history/pedidos/pedidos.component';
+import { PlatilloAgregarComponent } from './components/platillos/platillo-agregar/platillo-agregar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    AccesoComponent,
     DashboardComponent,
     ChefboardComponent,
     HistoryComponent,
@@ -31,7 +34,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     PlatilloComponent,
     CarritoComponent,
     NavbarComponent,
-    CarritoElementoComponent
+    CarritoElementoComponent,
+    PedidosComponent,
+    PlatilloAgregarComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +45,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule
   ],
-
   providers: [],
   bootstrap: [AppComponent]
 })

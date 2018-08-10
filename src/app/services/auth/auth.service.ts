@@ -13,47 +13,45 @@ export class AuthService implements CanActivate {
   public usuario: Observable<firebase.User>;
   private _uid: string;
   constructor(private _fireAuth: AngularFireAuth,
-              private _router: Router,
-              private _usuariosService: UsuariosService) {
-      this.usuario = this._fireAuth.authState;
+    private _router: Router,
+    private _usuariosService: UsuariosService) {
+    this.usuario = this._fireAuth.authState;
   }
 
   iniciarSesion(email: string, password: string) {
-    this._fireAuth.auth.signInWithEmailAndPassword(email, password)
+    return this._fireAuth.auth.signInWithEmailAndPassword(email, password)
       .then((user: firebase.auth.UserCredential) => {
-        return this._usuariosService.actualizarUsuarioEstatusConexion(user.user, 'online');
+        this._router.navigate(['/']);
       });
   }
 
-  crearCuenta(email: string, password: string) {
+  crearCuenta(email: string, password: string, nombre: string) {
     return this._fireAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user: firebase.auth.UserCredential) => {
-        return this._usuariosService.actualizarUsuarioEstatusConexion(user.user, 'online');
+        this._router.navigate(['/']);
       });
   }
 
   cerrarSesion(usuario) {
-    this._usuariosService
-      .actualizarUsuarioEstatusConexion(usuario, 'offline')
-      .catch(err => console.log(err))
-      .then( () => {
-        return this._fireAuth.auth.signOut().then(() => {
-          return this._router.navigate(['/login']);
-        });
-      });
+    return this._fireAuth.auth.signOut().then(() => {
+      this._router.navigate(['/login']);
+    }).catch(err => {
+      console.log(err);
+    });
   }
 
   canActivate() {
     return this.usuario.pipe(
-      map( usuario => {
+      map(usuario => {
         if (usuario) {
           return true;
         } else {
+          this._router.navigate(['/acceso']);
           return false;
         }
       }),
       catchError(err => {
-        this._router.navigate(['/login']);
+        this._router.navigate(['/acceso']);
         return of(false);
       })
     );
