@@ -25,6 +25,18 @@ export class AuthService implements CanActivate {
       });
   }
 
+  iniciarSesionFb() {
+    this._fireAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+      .then(res => {
+        console.log(res);
+        this._router.navigate(['/']);
+      });
+  }
+
+  cerrarSesionFb() {
+    this._fireAuth.auth.signOut();
+  }
+
   crearCuenta(email: string, password: string, nombre: string) {
     return this._fireAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((user: firebase.auth.UserCredential) => {

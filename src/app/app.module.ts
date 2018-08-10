@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { FormsModule } from '../../node_modules/@angular/forms';
 import { PedidosComponent } from './components/history/pedidos/pedidos.component';
 import { PlatilloAgregarComponent } from './components/platillos/platillo-agregar/platillo-agregar.component';
@@ -35,7 +36,7 @@ import { PlatilloAgregarComponent } from './components/platillos/platillo-agrega
     NavbarComponent,
     CarritoElementoComponent,
     PedidosComponent,
-    PlatilloAgregarComponent,
+    PlatilloAgregarComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +45,7 @@ import { PlatilloAgregarComponent } from './components/platillos/platillo-agrega
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    AngularFontAwesomeModule,
     FormsModule
   ],
   providers: [],

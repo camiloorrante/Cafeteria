@@ -60,6 +60,7 @@ export class AccesoComponent implements OnInit {
   }
 
   loginfb() {
+    this._auth.iniciarSesionFb();
   }
 
 
