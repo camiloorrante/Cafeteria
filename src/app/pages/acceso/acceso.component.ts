@@ -29,7 +29,11 @@ export class AccesoComponent implements OnInit {
     this.procesando = true;
     this._auth.iniciarSesion(this.emailLogin, this.passwordLogin)
       .then(() => {
-        this._router.navigate(['/dashboard']);
+        if (this.emailLogin === 'dev@gmail.com') {
+          this._router.navigate(['/chefboard']);
+        } else {
+          this._router.navigate(['/dashboard']);
+        }
       })
       .catch(err => {
         console.log(err);
@@ -48,15 +52,15 @@ export class AccesoComponent implements OnInit {
     this.procesando = true;
 
     this._auth.crearCuenta(this.emailRegistro, this.passwordRegistro, this.nombreRegistro)
-    .then(() => {
-      this._router.navigate(['/dashboard']);
-    })
-    .catch((err) => {
-      this.error = 'ocurrio un error al crear cuenta';
-    })
-    .then(() => {
-      this.procesando = false;
-    });
+      .then(() => {
+        this._router.navigate(['/dashboard']);
+      })
+      .catch((err) => {
+        this.error = 'ocurrio un error al crear cuenta';
+      })
+      .then(() => {
+        this.procesando = false;
+      });
   }
 
   loginfb() {
