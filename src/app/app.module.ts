@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PlatilloAgregarComponent } from './components/platillos/platillo-agregar/platillo-agregar.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     CarritoComponent,
     NavbarComponent,
     CarritoElementoComponent,
+    PlatilloAgregarComponent,
   ],
   imports: [
     BrowserModule,
