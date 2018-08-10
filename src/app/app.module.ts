@@ -20,6 +20,7 @@ import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '../../node_modules/@angular/forms';
 import { PedidosComponent } from './components/history/pedidos/pedidos.component';
+import { PlatilloAgregarComponent } from './components/platillos/platillo-agregar/platillo-agregar.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PedidosComponent } from './components/history/pedidos/pedidos.component
     NavbarComponent,
     CarritoElementoComponent,
     PedidosComponent,
+    PlatilloAgregarComponent,
   ],
   imports: [
     BrowserModule,
