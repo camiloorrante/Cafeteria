@@ -49,4 +49,6 @@ export const PEDIDOS = [
         ]
     }
 
-]
+];
+
+
