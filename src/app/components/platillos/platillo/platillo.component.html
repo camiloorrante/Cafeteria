@@ -1,17 +1,20 @@
-<div class="container border py-2 list-group-item-action rounded">
-  <div class="row">
-    <div class="col-md-4 col-sm-2">
-      <img src="{{platillo.foto}}" alt="platillo" class="rounded-circle container-fluid" style="min-width: 75px;">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-left" src="{{platillo.foto}}"
+    alt="Card image cap" style="max-height: 110px; min-height: 110px;">
+  <div class="card-body">
+    <h5 class="card-title">{{platillo.nombre}}</h5>
+    <p class="card-text">{{platillo.descripcion}}</p>
+
+    <div *ngIf="usuario.email === 'dev@gmail.com'; else car" placement="top" ngbTooltip="Quitar del menú">
+      <button class="btn btn-danger btn-block" (click)="removePlatillo()" placement="top" ngbTooltip="Agregar al Carrito">
+        <i class="fa fa-trash"></i>
+      </button>
     </div>
-    <div class="col-md-7 col-sm-4">
-      <h4>{{platillo.nombre}}</h4>
-      <p>{{platillo.descripcion}}</p>
-      <button class="btn btn-danger btn-block" *ngIf="mostrar" placement="top" ngbTooltip="Agregar al Carrito">Agregar</button>
-    </div>
-    <div class="col-md-1 col-sm-1" *ngIf="mostrar" placement="top" ngbTooltip="Quitar del menú">
-        <button type="button" class="close" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
+
+    <ng-template #car>
+      <button class="btn btn-danger btn-block" placement="top" ngbTooltip="Agregar al Carrito">
+        <i class="fa fa-cart-plus"></i>
+      </button>
+    </ng-template>
   </div>
 </div>

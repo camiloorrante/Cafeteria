@@ -25,7 +25,7 @@ export class PlatillosService {
   }
 
   postPlatillos(platillo: Platillos) {
-    this._firebase.list(rutaPlatillos).push(platillo);
+    return this._firebase.list(rutaPlatillos).push(platillo);
   }
 
   deletePlatillo(platillo) {

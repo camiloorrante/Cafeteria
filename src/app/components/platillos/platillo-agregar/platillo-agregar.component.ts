@@ -16,7 +16,9 @@ export class PlatilloAgregarComponent implements OnInit {
   }
 
   agregarPlatillo() {
-    this._platilloService.postPlatillos(this.platillo);
+    this._platilloService.postPlatillos(this.platillo).then( () => {
+      this.platillo = new Platillos();
+    });
   }
 
 }
