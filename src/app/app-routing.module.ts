@@ -5,13 +5,15 @@ import { AccesoComponent } from './pages/acceso/acceso.component';
 import { ActivoService } from './services/activo/activo.service';
 import { AuthService } from './services/auth/auth.service';
 import { HistoryComponent } from './pages/history/history.component';
+import { ChefboardComponent } from './pages/chefboard/chefboard.component';
 
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'acceso', component: AccesoComponent, canActivate: [ActivoService] },
   { path: 'dashboard', pathMatch: 'full', component: DashboardComponent, canActivate: [AuthService]},
-  { path: 'historial', component: HistoryComponent }
+  { path: 'historial', component: HistoryComponent },
+  { path: 'chefboard', component: ChefboardComponent }
 ];
 
 @NgModule({

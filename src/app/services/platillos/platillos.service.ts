@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
 import { AuthService } from '../auth/auth.service';
+import { Platillo } from '../../modelos/platillos';
 
 const rutaPlatillos = 'platillos';
 @Injectable({
@@ -22,5 +23,13 @@ export class PlatillosService {
         });
       })
     );
+  }
+
+  postPlatillos(platillo: Platillo) {
+    return this._firebase.list(rutaPlatillos).push(platillo);
+  }
+
+  deletePlatillo(platillo) {
+    this._firebase.list(rutaPlatillos).remove(platillo.key);
   }
 }
