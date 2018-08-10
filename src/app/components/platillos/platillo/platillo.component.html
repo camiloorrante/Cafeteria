@@ -6,7 +6,8 @@
     <div class="col-md-7 col-sm-4">
       <h4>{{platillo.nombre}}</h4>
       <p>{{platillo.descripcion}}</p>
-      <button class="btn btn-danger btn-block" placement="top" ngbTooltip="Agregar al Carrito">Agregar</button>
+      <button class="btn btn-danger btn-block" placement="top" ngbTooltip="Agregar al Carrito"
+      (click)="agregarAlCarrito(platillo)">Agregar</button>
     </div>
     <div class="col-md-1 col-sm-1" *ngIf="mostrar" placement="top" ngbTooltip="Quitar del menú">
         <button type="button" class="close" aria-label="Close">

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Platillo } from '../../../modelos/platillos';
 
 @Component({
   selector: 'neo-platillo',
@@ -11,6 +12,10 @@ export class PlatilloComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  agregarAlCarrito(platillo: Platillo) {
+    // this.agregarCarritoEvent.emit(platillo);
   }
 
 }

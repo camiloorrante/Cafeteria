@@ -18,7 +18,7 @@
             </ng-template>
           </a>
         </div>
-        <div class="col p-0 ml-5">
+        <div class="col p-0 ml-5" *ngIf="usuario">
           <a href="#" class="btn btn-danger btn-sm active text-danger" role="button" aria-pressed="true" (click)="cerrarSesion()">
             <fa name="power-off fa-2x" style="color:#FFFFFF;"></fa>
           </a>

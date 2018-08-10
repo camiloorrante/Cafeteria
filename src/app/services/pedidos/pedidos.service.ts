@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { map } from 'rxjs/operators';
+import { AuthService } from '../auth/auth.service';
 
 const coleccionPedidos = 'pedidos';
 
@@ -9,7 +10,7 @@ const coleccionPedidos = 'pedidos';
 })
 export class PedidosService {
 
-  constructor(private _firebase: AngularFireDatabase) { }
+  constructor(private _firebase: AngularFireDatabase, private _auth: AuthService) { }
 
   getAllByUserId(uid) {
     return this._firebase.list(`${coleccionPedidos}/${uid}`)
@@ -23,5 +24,16 @@ export class PedidosService {
             };
           });
         }));
+  }
+
+  insertPedido(platillos: Array<any>, uid, total) {
+    this._auth.usuario.subscribe(usuario => {
+      console.log(usuario.uid);
+      this._firebase.list(`pedidos/${usuario.uid}`).push({
+        total: total,
+        fecha: new Date().toISOString(),
+        platillos: platillos
+      });
+    });
   }
 }
