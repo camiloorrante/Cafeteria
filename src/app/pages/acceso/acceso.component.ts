@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
 import { ActivoService } from '../../services/activo/activo.service';
 import { Router } from '@angular/router';
@@ -16,6 +16,7 @@ export class AccesoComponent implements OnInit {
   public passwordRegistro: string;
   public error: string;
   public procesando = false;
+  @Output('chef') chef = false;  
 
   constructor(private _auth: AuthService, private _router: Router) { }
 
@@ -31,6 +32,7 @@ export class AccesoComponent implements OnInit {
       .then(() => {
         if (this.emailLogin === 'dev@gmail.com') {
           this._router.navigate(['/chefboard']);
+          this.chef = true;
         } else {
           this._router.navigate(['/dashboard']);
         }
