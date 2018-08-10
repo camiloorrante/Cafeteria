@@ -1,6 +1,10 @@
 <div class="container">
+  <header class="border-bottom mb-2 text-center">
+    <h3>Menú
+    </h3>
+  </header>
   <div class="row">
-    <div class="col-6 mb-3" *ngFor="let platillo of platillos">
+    <div class="col-6 my-2" *ngFor="let platillo of platillos">
       <neo-platillo [platillo]="platillo"></neo-platillo>
     </div>
   </div>

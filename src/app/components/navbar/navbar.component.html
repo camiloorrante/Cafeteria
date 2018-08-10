@@ -1,8 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-danger bg-danger">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
+<nav class="navbar navbar-expand-lg navbar-danger bg-danger pb-0">
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
     aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
+
+  </button> -->
+  <div class="container-fluid">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-4 col-md-1">
+          <img src="https://goodfood.hr/wp-content/uploads/2017/04/logoweb.png" alt="foto de perfil" style="max-width: 50px; border-radius: 50%;">
+        </div>
+        <div class="col-3 d-none d-lg-block d-xl-block">
+          <a class="navbar-brand" href="#">
+            <p class="text-white">Bienvenido usuario</p>
+          </a>
+        </div>
+        <div class="col p-0">
+          <button class="btn btn-danger">
+            <fa name="power-off fa-2x" style="color:#FFFFFF;"></fa>
+          </button>
+        </div>
+      </div>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">
       <p class="text-white" *ngIf="!usuario.displayName; else nameFb">Bienvenido {{usuario?.email}}</p>
@@ -11,17 +29,20 @@
       </ng-template>
     </a>
     <div>
-      <a href="#" class="btn btn-outline-light btn-sm active text-danger" role="button" aria-pressed="true" (click)="cerrarSesion()">Cerrar sesion</a>
-    </div>
-    <div class="ml-3">
-      <i class="fa fa-cookie"></i>
+      <a href="#" 
+         class="btn btn-outline-light btn-sm active text-danger" 
+         role="button" 
+         aria-pressed="true"
+         (click)="cerrarSesion()">Cerrar sesion</a>
+
     </div>
 
-    <ul class="mr-auto mt-2 mt-lg-0">
-    </ul>
-    <!-- <div class="mr-5">
-      <i class="fa fa-cart-arrow-down fa-3x" style="color:#FFFFFF;"></i>
-    </div> -->
-    <a href="#" class="btn btn-outline-light btn-sm active text-danger" role="button" aria-pressed="true">Mis pedidos</a>
+    <div class="col-4 col-sm-1">
+      <a href="#" class="btn btn-outline-light btn-sm active text-danger" role="button" aria-pressed="true">Mis pedidos</a>
+    </div>
+
+    <div class="col-4 col-sm-1">
+      <a href="#" class="btn btn-outline-light btn-sm active text-danger" role="button" aria-pressed="true">Mis pedidos</a>
+    </div>
   </div>
 </nav>
