@@ -12,28 +12,15 @@
         </div>
         <div class="col-3 d-none d-lg-block d-xl-block">
           <a class="navbar-brand" href="#">
-            <p class="text-white">Bienvenido usuario</p>
+            <p class="text-white">Bienvenido {{usuario?.email}}</p>
           </a>
         </div>
         <div class="col p-0">
-          <button class="btn btn-danger">
+          <a href="#" class="btn btn-danger btn-sm active text-danger" role="button" aria-pressed="true" (click)="cerrarSesion()">
             <fa name="power-off fa-2x" style="color:#FFFFFF;"></fa>
-          </button>
+          </a>
         </div>
       </div>
-=======
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="#">
-      <p class="text-white">Bienvenido {{usuario?.email}}</p>
-    </a>
-    <div>
-      <a href="#" 
-         class="btn btn-outline-light btn-sm active text-danger" 
-         role="button" 
-         aria-pressed="true"
-         (click)="cerrarSesion()">Cerrar sesion</a>
->>>>>>> 4c572b12d2b25305a9f4703e2610906f236caa8a
     </div>
 
     <div class="col-4 col-sm-1">
