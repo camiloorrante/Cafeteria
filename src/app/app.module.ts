@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './pages/login/login.component';
+import { AccesoComponent } from './pages/acceso/acceso.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ChefboardComponent } from './pages/chefboard/chefboard.component';
 import { HistoryComponent } from './pages/history/history.component';
@@ -18,11 +18,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FormsModule } from '../../node_modules/@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    AccesoComponent,
     DashboardComponent,
     ChefboardComponent,
     HistoryComponent,
@@ -38,7 +39,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NgbModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule],
+    AngularFireAuthModule,
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

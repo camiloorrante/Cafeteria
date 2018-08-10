@@ -5,10 +5,14 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">
-      <p class="text-white">Bienvenido usuario</p>
+      <p class="text-white">Bienvenido {{usuario?.email}}</p>
     </a>
     <div>
-      <a href="#" class="btn btn-outline-light btn-sm active text-danger" role="button" aria-pressed="true">Cerrar sesion</a>
+      <a href="#" 
+         class="btn btn-outline-light btn-sm active text-danger" 
+         role="button" 
+         aria-pressed="true"
+         (click)="cerrarSesion()">Cerrar sesion</a>
     </div>
     <div class="ml-3">
       <i class="fa fa-cookie"></i>

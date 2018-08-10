@@ -1,0 +1,49 @@
+<div class="login-container">
+  <div class="flex-item">
+    <h2>Iniciar Sesión</h2>
+    <div class="col-11 mt-3" *ngIf="error">
+      <div class="alert alert-danger">
+        <small>{{error}}</small>
+      </div>
+    </div>
+    <form role="form">
+      <div class="form-group">
+        <label for="email">Correo</label>
+        <input type="email" name="emailLogin" class="form-control" placeholder="Correo" [(ngModel)]="emailLogin">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Contraseña</label>
+        <input type="password" name="passwordLogin" class="form-control" placeholder="Contraseña" [(ngModel)]="passwordLogin">
+      </div>
+      <a href="#">Olvidó su contraseña?</a>
+      <br>
+      <br>
+      <button type="submit" class="btn btn-sm btn-primary" [disabled]="procesando === true" (click)="iniciarSesion()">Iniciar sesion</button>
+      <span>o
+        <button class="btn btn-sm btn-info" (click)="loginfb()">Login with Facebook</button>
+      </span>
+    </form>
+  </div>
+  <div class="flex-item">
+    <h2>No tienes una cuenta?</h2>
+    <h2>Registrate</h2>
+    <form role="form">
+      <div class="form-group">
+        <label for="first_name">Nombre</label>
+        <input type="text" name="nombreRegistro" class="form-control" placeholder="Nombre completo" [(ngModel)]="nombreRegistro">
+      </div>
+      <div class="form-group">
+        <label for="email">Correo</label>
+        <input type="email" name="emailRegistro" class="form-control" placeholder="Correo" [(ngModel)]="emailRegistro">
+      </div>
+      <div class="form-group">
+        <label for="pwd">Contraseña</label>
+        <input type="password" name="passwordRegistro" class="form-control" placeholder="Contraseña" [(ngModel)]="passwordRegistro">
+      </div>
+      <button type="submit" class="btn btn-warning" [disabled]="procesando === true" (click)="crearCuenta()">Registrase</button>
+      <span>o
+        <a>Regresar a la tienda</a>
+      </span>
+    </form>
+  </div>
+</div>
