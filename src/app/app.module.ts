@@ -18,6 +18,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     PlatilloComponent,
     CarritoComponent,
     NavbarComponent,
-    CarritoElementoComponent,
+    CarritoElementoComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +39,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     NgbModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule],
+    AngularFireAuthModule,
+    AngularFontAwesomeModule
+  ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
