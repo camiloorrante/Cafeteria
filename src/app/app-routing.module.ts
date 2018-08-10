@@ -5,17 +5,12 @@ import { AccesoComponent } from './pages/acceso/acceso.component';
 import { ActivoService } from './services/activo/activo.service';
 import { AuthService } from './services/auth/auth.service';
 import { HistoryComponent } from './pages/history/history.component';
-<<<<<<< HEAD
 import { PedidoschefComponent } from './pages/pedidoschef/pedidoschef.component';
-=======
 import { ChefboardComponent } from './pages/chefboard/chefboard.component';
-
->>>>>>> origin/dev
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
   { path: 'acceso', component: AccesoComponent, canActivate: [ActivoService] },
-<<<<<<< HEAD
   {
     path: 'dashboard',
     pathMatch: 'full',
@@ -23,12 +18,9 @@ const routes: Routes = [
     canActivate: [AuthService]
   },
   { path: 'historial', component: HistoryComponent },
-  { path: 'pedidos', component: PedidoschefComponent }
-=======
-  { path: 'dashboard', pathMatch: 'full', component: DashboardComponent, canActivate: [AuthService]},
+  { path: 'pedidos', component: PedidoschefComponent },
   { path: 'historial', component: HistoryComponent },
   { path: 'chefboard', component: ChefboardComponent }
->>>>>>> origin/dev
 ];
 
 @NgModule({
